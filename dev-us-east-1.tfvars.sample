@@ -1,0 +1,26 @@
+project = "analytics"
+environment = "dev"
+region = "us-east-1"
+
+# networking 
+vpc_name_postfix            = "01"
+vpc_cidr                    = "192.168.0.0/16"
+vpc_azs                     = ["us-east-1a", "us-east-1c"]
+vpc_private_subnets         = ["192.168.3.0/24", "192.168.4.0/24"]
+vpc_public_subnets          = ["192.168.1.0/24", "192.168.2.0/24"]
+vpc_enable_nat_gateway      = true
+vpc_one_nat_gateway_per_az  = false
+vpc_enable_dns_hostnames    = true
+vpc_enable_dns_support      = true
+
+# sgr
+sgr_ingress_cidr_blocks     = ["73.166.131.200/32", "204.246.162.200/32", "192.168.0.0/16"]
+
+# ec2
+kpr_key_name    = "ec2-user"
+kpr_public_key  = "ssh-rsa luggagecode12345 "
+
+ec2_analytics_small_ami_id          = "ami-0d22782bed64a219d"
+ec2_analytics_small_instance_type   = "m5.4xlarge"
+ec2_analytics_small_placement_group = "partition01"
+ec2_analytics_instance_count        = 1
